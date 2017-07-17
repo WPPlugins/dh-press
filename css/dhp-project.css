@@ -1,0 +1,458 @@
+/** CSS styles specific to Project View in DH Press
+ **/
+
+@charset "UTF-8";
+
+html {
+	overflow: hidden;
+}
+
+body {
+	cursor: auto;
+
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif" !important;
+	font-size: 14px !important;
+	color: black !important;
+}
+
+	/* For busy cursor */
+body.waiting * {
+    cursor: wait !important;
+}
+
+body .site {
+	margin-top: 0px;
+}
+
+	/* FIX: Adjusts foundations nowrap style for code blocks */
+code {
+	white-space: inherit;
+}
+
+	/* ======== NAVIGATION BAR ========= */
+
+.dhp-nav {
+	z-index: 1102;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1105;
+
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
+}
+
+.dhp-nav.fixed {
+	position: fixed;
+}
+
+.admin-bar .dhp-nav.fixed {
+	top: 30px;
+}
+
+.top-bar-section ul li>a {
+	font-size: 1em;
+}
+
+.tab-content {
+	min-height: 150px;
+}
+
+.nav-tabs {
+	text-transform: capitalize;
+}
+
+	/* Title of Project (top-left) */
+.dhp-nav .title-area .name h1 {
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";  
+	font-size: 16px !important;
+}
+
+	/* =========== MODALS =========== */
+
+	/* "Loading" modal */
+#loading {
+	margin-top: 40px;
+	position: fixed;
+}
+
+.loading-content {
+	width: 100%;
+	height: 200px;
+}
+
+.loading-content h3.loading-title {
+	margin-top: 10px;
+	padding-top: 3px;
+	text-align: center;
+	font-size: 28px;
+}
+
+	/* From http://tympanus.net/codrops/2012/11/14/creative-css-loading-animations/ */
+.spinner {
+	/* Size and position */
+    font-size: 100px; /* 1em */
+	width: 1em;
+    height: 1em;
+    position: relative;
+    margin: 16px auto;
+
+    /* Styles */
+    border-radius: 50%;
+    background: #FF4F72; /* Fallback */
+    background:
+        linear-gradient(#ea2d0e 50%, #fcd883 50%), /* First column */
+        linear-gradient(#fcd883 50%, #ea2d0e 50%); /* Second column */
+    background-position: 
+    	0 0,    /* Position of 1st column */
+    	100% 0; /* Position of 2nd column */
+    background-size: 50% 100%; /* Contraction of "50% 100%, 50% 100%" */
+    background-repeat: no-repeat;
+    box-shadow: 
+    	inset 0 0 0 .12em rgba(0,0,0,0.2), /* Inner border */
+    	0 0 0 .12em rgba(255,255,255,0.1); /* Outter border */
+    opacity: 0.7;
+    animation: rota 3s infinite alternate;
+}
+
+spinner:after {
+    /* Size */
+    content: "";
+    width: 50%;
+    height: 50%;
+
+    /* Perfect centering */
+    position: absolute;
+    top: 25%;
+    left: 25%;
+
+    /* Styles */
+    border: .12em solid rgba(255,255,255,0.3);
+    border-radius: inherit;
+}
+
+@keyframes rota {
+    25%  { transform: rotate(270deg); }
+    50%  { transform: rotate( 90deg); }
+    75%  { transform: rotate(360deg); }
+    100% { transform: rotate(180deg); }
+}
+
+.reveal-modal-bg {
+	z-index: 1103;
+}
+
+.reveal-modal {
+	z-index: 1104;
+	max-height: 75%;
+	overflow: auto;
+}
+
+.reveal-modal-footer {
+	text-align: right;
+}
+
+	/* ========== VISUALIZATION FRAME ========= */
+
+#dhp-visual {
+	background: #fff;
+	width:100%;
+	min-width: 100%;
+	height: auto;
+	position:absolute;
+	top: 45px;
+	left: 0px;
+	bottom: 0;
+
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif" !important;
+	font-size: 12px !important;
+}
+
+.dhp-mote-title {
+	font-weight: bold;
+}
+
+	/* ========== MODAL WINDOWS =========== */
+
+.modal {
+	z-index: 1150;
+}
+
+.modal-content {
+	overflow: auto;
+	font-size: 14px !important;
+	color: black;
+}
+
+.modal-content div {
+	padding-bottom: 10px;
+	line-height: 1.5em;
+}
+
+.modal.transcript {
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	width: 90%;
+	margin-left: -45%;
+}
+
+.modal-backdrop {
+	z-index: 1140;
+}
+
+.modal-header h3 {
+	clear: none;
+	font-size: 20px;
+	margin-top: 3px;
+	padding-top: 3px;
+	margin-bottom: 3px;
+	padding-bottom: 3px;
+}
+
+.modal-body h3 {
+	font-size: 16px;
+}
+
+	/* Lines of mote values (for select modals) */
+.modal-body div {
+	line-height: 1.1em;
+	padding-top: 6px;
+	padding-left: 2px;
+	padding-bottom: 0;
+}
+
+.modal-body .dhp-mote-title {
+	font-weight: bold;
+}
+
+.modal-body .thumb-right img {
+	float: right;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	width: 33%;
+}
+
+.modal-body .thumb-left img {
+	float: left;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	width: 33%;
+}
+
+.modal-backdrop, .modal-backdrop.fade.in {
+	opacity: .6;
+	filter: alpha(opacity=60);
+}
+
+/* ============= LEGENDS ============= */
+
+.legend {
+	display: none;
+}
+
+#legends {
+	background: #fff;
+	background-color: rgba(255, 255, 255, .95);
+
+	/*foundation font style*/
+	color: #222;
+	font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+
+	position:absolute;
+	
+		/*For dynamic resizing height*/
+	overflow: hidden;
+	height: auto;
+
+	opacity: 0.9;
+
+	margin-left: 0;
+
+	min-width: 260px;
+
+		/* These height settings are not working properly, prob from interference by Foundation.
+			Only the min-height setting is used; max-height is ignored.
+		 */
+	min-height: 300px;
+	
+/*	min-height: 220px; */
+/*	max-height: 90% !important; */
+	max-height: 530px !important;
+
+	top: 6px;
+	left: 6px;
+
+	z-index: 1103;
+	-moz-box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+}
+
+#legends.mini {
+	min-height: 30px;
+    overflow: hidden;
+}
+
+
+@media all and (min-width: 1025px) {
+  #legends {
+  	min-width: 320px;
+  }
+}
+
+.legend-row {
+}
+
+.legend-row .legend-div {
+	margin-left: 0px;
+}
+
+	/* Section containing an entire Legend */
+.legend-div {
+	color: black !important;
+}
+
+.legend-div .legend-title {
+	font-size: 22px !important;
+	font-weight: bold;
+
+	height: 30px !important;
+
+	padding-top: 3px;
+	padding-left: 10px;
+	padding-right: 20px;
+	border-bottom: 1px solid #111;
+	z-index: 20;
+}
+
+.legend-div .terms {
+	font-size: 14px !important;
+
+		/*For dynamic resizing height*/
+	/*position: absolute;*/
+	max-height: 500px;
+	overflow-y: auto;
+
+	top:38px;
+	bottom: 0;
+	width: 100%;
+	z-index: 19;
+	
+	margin-top: 1px;
+}
+
+.legend-div .terms .row {
+	width:100%;
+	cursor: pointer;
+	line-height: 15px;
+}
+
+.legend-div .terms .row.hasParent {
+	display: none;
+}
+
+.legend-div .terms .row:hover,
+.legend-div .terms .row.selected {
+	background: #e8f2e6;
+}
+
+.legend-div .terms .maki-icon {
+	margin: 0;
+	padding: 0;
+
+	margin-left: -5px !important;
+
+	float: left !important;
+	display: inline !important;
+}
+
+.legend-div .terms .png {
+	margin: 0;
+	padding: 0;
+
+	margin-left: -5px !important;
+
+	float: left !important;
+	display: inline !important;
+
+	min-width: 20px !important;
+	min-height: 20px !important;
+}
+
+.legend-div .terms a {
+	line-height: 15px;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	overflow: hidden;
+	color: black !important;
+	display: inherit;
+}
+
+.legend-div input[type='checkbox'] {
+	/*margin: 12px;*/
+	font-size: 14px !important;
+	vertical-align: middle;
+	margin-top: 11px;
+}
+
+.legend-div .check-all input[type='checkbox'] {
+	font-size: 14px !important;
+}
+
+.legend-div .icon-legend {
+	width: 15px;
+	height: 15px;
+	margin:0;
+	margin-top: 9px;
+}
+
+	/* Little resize button on legends */
+.legend-resize {
+	padding: 7px;
+	position: absolute;
+	right: 0px;
+}
+
+	/* Keep slider small */
+.layer-opacity {
+	max-width: 160px;
+}
+
+	/* Legends for child terms TODO: add html to display child terms */
+#child_legend {
+ 	background: #e8f2e6;
+ 	padding: 5px;
+ 	border: 3px solid #ccc;
+ 	display: none;
+}
+
+#child_legend h3 { 
+ 	padding-bottom: 5px;
+}
+
+#child_legend ul li {
+  	padding-bottom: 5px;
+}
+
+	/* Controls for opacity/on-off for each layer */
+#layers-panel {
+	margin-left: 0px;
+
+	font-size: 14px !important;
+}
+
+    /* Creates color area for non-checkbox Legends */
+.splash {
+    padding: 4px;
+    padding-left: 12px;
+    border: 1px solid black;
+    position: relative;
+    top: 6px;
+    left: 6px;
+/*    min-width: 20px; */
+    width: 20px;
+    min-height: 20px;
+}
+

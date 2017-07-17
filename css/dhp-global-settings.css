@@ -1,0 +1,16 @@
+	/* Pages that scroll forever caused issues */
+#tipModal.reveal-modal {
+	position   : fixed;
+	z-index    : 1106;
+	max-height : 75%;
+	overflow   : auto;
+	top        : 87px !important;
+}
+
+#tipModal .modal-content {
+    overflow: auto;
+}
+
+#tipModal h1 {
+	font-size: 2.75rem;
+}

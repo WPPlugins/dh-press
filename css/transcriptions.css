@@ -1,0 +1,45 @@
+/** CSS styles specific to rendering transcriptions in DH Press
+ **/
+
+.transcript-list {
+/*    display: table; */
+	max-height: 300px;
+	overflow-y: scroll;
+	resize: both;
+/*	border-spacing: 4px; */
+}
+
+.transcript-list .row {
+	display: table-row;
+	margin: 4px;
+}
+
+	/* Create odd-even background toggle */
+.transcript-list .row:nth-child(odd) {
+	background: #ddd;
+}
+
+.transcript-list .type-timecode {
+	display: table-cell;
+	line-height: 1.2em;
+	padding: 4px;
+	cursor: pointer;
+}
+
+	/* playhead */
+.type-timecode.current-clip {
+	background-color: #007fff;
+	color: #fff;
+}
+
+.type-timecode:hover {
+	background-color: #0055bb;
+	color: #fff;
+}
+
+.transcript-list .type-text {
+	display: table-cell;
+	vertical-align: top;
+	line-height: 1.2em;
+	padding: 4px;
+}

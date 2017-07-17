@@ -1,0 +1,157 @@
+
+/*********************
+ ** TopicCards
+ **/
+
+/* First, we need to disable some WP/Theme defaults, or they ruin card formatting */
+
+.entry-content p,
+.entry-summary p,
+.comment-content p,
+.mu_register p {
+    line-height: 1rem !important;
+    margin-bottom: 1rem !important;
+    margin: 0 0 0 0 !important;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+    /* Enable scroll bar for Cards */
+#dhp-visual {
+    overflow: auto;
+}
+
+#card-container {
+    margin: 30px auto;
+    padding-bottom: 30px;
+    z-index: 0 !important;
+}
+
+.card {
+    background: #00BFFF;
+    border: 1px solid transparent;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 4px;
+    margin: 2px;
+    overflow: hidden;
+    z-index: 0 !important;
+}
+
+    /* When user hovers over card, zoom in */
+.card:hover {
+    border: 1px solid #222;
+    cursor: pointer;
+
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+
+    z-index: 1 !important;
+
+    -webkit-transition: all 150ms ease-in-out;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 150ms ease-in-out;
+    -ms-transform: scale(1.1);   
+    -moz-transition: all 150ms ease-in-out;
+    -moz-transform: scale(1.1);
+    transition: all 150ms ease-in-out;
+    transform: scale(1.1);  
+}
+
+    /* Scale card acc to size */
+
+.card.short {
+    height: 120px;
+}
+
+.card.med-height {
+    height: 200px;
+}
+
+.card.tall {
+    height: 300px;
+}
+
+.card.thin {
+    width: 120px;
+}
+
+.card.med-width {
+    width: 200px;
+}
+
+.card.wide {
+    width: 300px;
+}
+
+    /* Material on the cards */
+
+.card p {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0 0 0 0;
+    padding: 1px;
+    margin-bottom: 2px;
+}
+
+.card p img {
+	display: block;
+	padding: 1px;
+    margin: 1px;
+    margin-top: 1px;
+    border: 1px black solid;
+    margin-bottom: 2px;
+    max-width: 98%;
+}
+
+    /* Controls */
+.top-bar .button {
+    margin: 3px;
+}
+
+    /* tweaks to Filter Modal modal */
+#filterModal {
+    max-height: 400px;
+    overflow: scroll;
+    line-height: 1.1em;
+
+}
+
+#filterModal input {
+    line-height: 16px !important;
+    margin: 4px;
+    padding: 0;
+}
+
+#filterModal input[type=text] {
+    padding: 3px;
+    width: 160px;
+}
+
+    /* Each selectable filter value for short text is encased in this div */
+.st-filter-value {
+    margin: 2px 5px 2px 0px !important;
+    padding: 0 !important;
+    display: inline-block;
+    width: auto;
+    line-height: 1.1em;
+}
+
+#st-filter-vals {
+    line-height: 1.1em;
+    padding-top: 0;
+    margin-top: 4px;
+}
+
+.date-boxes {
+    padding: 0;
+    display: inline-block;
+}
+
+.date-boxes input {
+    margin: 2px 5px 2px 0px;
+    display: inline-block;
+}
